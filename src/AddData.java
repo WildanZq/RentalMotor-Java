@@ -17,8 +17,12 @@ public class AddData extends javax.swing.JFrame {
     /**
      * Creates new form AddData
      */
-    public AddData() {
+    String user;
+    
+    public AddData(String u) {
         initComponents();
+        user = u;
+        jTextField1.setText(u);
     }
 
     /**
@@ -72,6 +76,7 @@ public class AddData extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(60, 90, 60, 14);
 
+        jTextField1.setEditable(false);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -174,7 +179,7 @@ public class AddData extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.setVisible(false);
-        new Main().show();
+        new Main(user).show();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -197,7 +202,7 @@ public class AddData extends javax.swing.JFrame {
             int status = KoneksiDB.execute(SQL);
             if(status==1){
                 JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan", "Sukses", JOptionPane.INFORMATION_MESSAGE);
-                new Main().show();
+                new Main(user).show();
             } else {
                 JOptionPane.showMessageDialog(this,"Data gagal ditambahkan", "Gagal", JOptionPane.WARNING_MESSAGE);   
             }
@@ -205,7 +210,6 @@ public class AddData extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jTextField1.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
         jTextArea1.setText("");
@@ -216,7 +220,7 @@ public class AddData extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -243,7 +247,7 @@ public class AddData extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddData().setVisible(true);
+                new AddData(user).setVisible(true);
             }
         });
     }

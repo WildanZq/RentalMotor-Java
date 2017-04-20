@@ -144,7 +144,8 @@ public class login extends javax.swing.JFrame {
             ps.setString(2, txtpass.getText());
             ResultSet result = ps.executeQuery();
             if(result.next()){
-                new Main().show();
+                String user = txtnama.getText();
+                new Main(user).setVisible(true);
                 this.dispose();
             }
             else {
