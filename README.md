@@ -1,9 +1,7 @@
 # RentalMotor-Java
-## Aplikasi Rental Motor Berbasis JAVA
+Wildan Ziaulhaq, XIRPL2, 30, SMK Telkom Malang
 
-#### Wildan Ziaulhaq, XIRPL2, 30, SMK Telkom Malang
-
-### Screenshot
+## Screenshot
 ##### Fitur Search
 ![Screenshot ke-6](https://raw.githubusercontent.com/WildanZq/RentalMotor-Java/master/search.PNG)
 -------
